@@ -38,7 +38,7 @@ body {
 
 #right_header {
     width: 65%;
-    border-left: 1px solid #B1B1B1;
+    border-left: 1px solid #d1d0d0;
 }
 
 /* main layout */
@@ -76,8 +76,11 @@ body {
 #messages_input {
     width: 100%;
     height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     background-color: #F3EEEA;
-    border-left: 1px solid #B1B1B1;
+    border-left: 1px solid #d1d0d0;
 }
 
 #user_avatar {
@@ -152,4 +155,24 @@ body {
 #notice button i {
     color: #8EDAFC;
     font-size: 25px;
+}
+
+#messages_input button {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: none;
+    background-color: none;
+}
+
+#messages_input input {
+    width: 85%;
+    padding: 17px;
+    border: none;
+    border-radius: 5px;
+}
+
+#messages_input button i {
+    font-size: 25px;
+    color: #6B7376;
 }
