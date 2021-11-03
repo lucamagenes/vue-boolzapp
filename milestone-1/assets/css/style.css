@@ -39,6 +39,9 @@ body {
 #right_header {
     width: 65%;
     border-left: 1px solid #d1d0d0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 /* main layout */
@@ -60,6 +63,13 @@ body {
     width: 35%;
     height: 100%;
     background-color: white;
+}
+
+#chat_section {
+    width: 100%;
+    height: calc(100% - 130px);
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 #right_main {
@@ -85,7 +95,7 @@ body {
 
 #user_avatar {
     height: 100%;
-    padding: 0 1rem;
+    padding-left: 1rem;
     display: flex;
     align-items: center;
 }
@@ -96,7 +106,7 @@ body {
 
 #left_header_icons {
     height: 100%;
-    padding: 0 1rem;
+    padding-right: 1rem;
     display: flex;
     align-items: center;
 }
@@ -175,4 +185,50 @@ body {
 #messages_input button i {
     font-size: 25px;
     color: #6B7376;
+}
+
+/* right side header open chat section */
+
+#open_chat {
+    margin-left: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+#open_chat img {
+    height: 60px;
+    border-radius: 50%;
+    margin-right: 1rem;
+}
+
+#chat_info .last_access {
+    color: #B1B1B1;
+    font-size: 13px;
+}
+
+/* main chat section  */
+
+#contact {
+    width: 100%;
+    height: 80px;
+    padding: 0 1rem;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #ededed;
+    cursor: pointer;
+}
+
+#contact:hover {
+    background-color: #E9EBEB;
+}
+
+#contact img {
+    height: 60px;
+    border-radius: 50%;
+}
+
+#contact_name {
+    align-self: flex-start;
+    margin-left: 1rem;
+    margin-top: 1rem;
 }
