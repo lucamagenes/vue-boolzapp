@@ -57,16 +57,19 @@
 }
 
 #right_main {
-    display: flex;
     width: 65%;
     height: 100%;
+}
+
+#messages_box {
+    width: 100%;
+    height: calc(100% - 80px);
     background-image: url("../img/mine.jpg");
 }
 
-#right_footer {
+#messages_input {
     width: 100%;
     height: 80px;
-    align-self: flex-end;
     background-color: #F3EEEA;
     border-left: 1px solid #B1B1B1;
 }
