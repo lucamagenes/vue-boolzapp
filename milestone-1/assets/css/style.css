@@ -232,3 +232,40 @@ body {
     margin-left: 1rem;
     margin-top: 1rem;
 }
+
+/* main messages box section */
+
+#messages {
+    width: 85%;
+    margin: auto;
+    padding-top: 2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+#message {
+    width: fit-content;
+    min-width: 200px;
+    padding: 1rem;
+    border-radius: 10px;
+    margin: 0.5rem;
+    position: relative;
+}
+
+#message.sent_message {
+    background-color: #D5F9BA;
+    align-self: flex-end;
+}
+
+#message.received_message {
+    background-color: white;
+}
+
+.date_message {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 3px;
+    font-size: 11px;
+    color: #B1B1B1;
+}

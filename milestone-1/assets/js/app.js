@@ -95,8 +95,6 @@ const root = new Vue({
         ],
     },
     methods: {
-        openChat() {
-            this.counter = this.contacts
-        }
+
     }
 })

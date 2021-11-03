@@ -83,8 +83,7 @@
                             <div id="contacts">
 
                                 <div id="contact" v-for="(contact, index) in
-                                    contacts"
-                                    @click="openChat(index)">
+                                    contacts">
 
                                     <img :src="contact.avatar" alt="">
 
@@ -100,7 +99,25 @@
 
                     <div id="right_main">
 
-                        <div id="messages_box"></div>
+                        <div id="messages_box">
+
+                            <div id="messages">
+
+                                <div id="message" v-for="message in
+                                    contacts[counter].messages"
+                                    :class="message.status == 'sent' ?
+                                    'sent_message' : 'received_message'">
+
+                                    <p>{{message.text}}
+                                    </p>
+                                    <p class="date_message">{{message.date}}
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+                        </div>
                         <!-- messages box -->
 
                         <div id="messages_input">
