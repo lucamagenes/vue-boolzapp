@@ -19,33 +19,54 @@
 
                 <div id="app_header">
 
-                    <aside id="left_header"></aside>
+                    <aside id="left_header">
+
+                        <div id="user_avatar" class="avatar">
+                            <img :src="user[counter].avatar" alt="">
+                            <p class="user_name"> {{user[counter].name}} </p>
+                        </div>
+
+                        <div id="left_header_icons">
+                            <i class="fas fa-circle-notch fa-lg fa-fw"></i>
+                            <i class="fas fa-comment-alt fa-lg fa-fw"></i>
+                            <i class="fas fa-ellipsis-v fa-lg fa-fw"></i>
+                        </div>
+
+                    </aside>
+                    <!-- left side header -->
 
                     <div id="right_header"></div>
+                    <!-- right side header -->
 
                 </div>
+                <!-- app header -->
 
             </header>
+            <!-- background header -->
 
             <main id="background_main">
 
                 <div id="app_main">
 
                     <aside id="left_main"></aside>
+                    <!-- left side main -->
 
                     <div id="right_main">
 
                         <div id="messages_box"></div>
+                        <!-- messages box -->
 
-                        <div id="messages_input">
-
-                        </div>
+                        <div id="messages_input"></div>
+                        <!-- messages input -->
 
                     </div>
+                    <!-- right side main -->
 
                 </div>
+                <!-- app main -->
 
             </main>
+            <!-- background main -->
 
         </div>
 
