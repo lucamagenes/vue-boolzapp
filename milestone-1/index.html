@@ -75,7 +75,11 @@
                         </div>
 
                         <div id="chat_search">
-                            <input type="text">
+                            <div id="chat_search_wrapper">
+                                <i class="fas fa-search fa-lg fa-fw"></i>
+                                <input type="text" placeholder="Cerca o inizia
+                                    una nuova chat">
+                            </div>
                         </div>
 
                         <div id="chat_section">
@@ -83,7 +87,8 @@
                             <div id="contacts">
 
                                 <div id="contact" v-for="(contact, index) in
-                                    contacts">
+                                    contacts" :class="index === counter ?
+                                    'active' : ''">
 
                                     <img :src="contact.avatar" alt="">
 
@@ -122,13 +127,14 @@
 
                         <div id="messages_input">
 
-                            <button>
+                            <button class="emoj">
                                 <i class="far fa-smile fa-lg fa-fw"></i>
                             </button>
 
-                            <input type="text">
+                            <input class="textMessage" type="text"
+                                placeholder="Scrivi un messaggio">
 
-                            <button>
+                            <button class="voiceMessage">
                                 <i class="fas fa-microphone fa-lg fa-fw"></i>
                             </button>
 

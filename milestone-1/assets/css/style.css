@@ -113,7 +113,7 @@ body {
 
 #left_header_icons i {
     margin: 0 0.5rem;
-    color: #B1B1B1;
+    color: #8f8383;
 }
 
 #notice {
@@ -139,11 +139,25 @@ body {
     background-color: #FAFAFA;
 }
 
+#chat_search_wrapper {
+    width: 95%;
+    padding: 0.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    box-shadow: 0px 0px 0px 1px #efefef;
+}
+
+#chat_search i {
+    color: #8f8383;
+    margin: 0 1rem;
+}
+
 #chat_search input {
     width: 95%;
     padding: 8px;
     border: none;
-    box-shadow: 0px 0px 0px 1px #efefef;
 }
 
 /* utilities */
@@ -222,6 +236,10 @@ body {
     background-color: #E9EBEB;
 }
 
+#contact.active {
+    background-color: #E9EBEB;
+}
+
 #contact img {
     height: 60px;
     border-radius: 50%;
@@ -246,6 +264,7 @@ body {
 #message {
     width: fit-content;
     min-width: 200px;
+    max-width: 45%;
     padding: 1rem;
     border-radius: 10px;
     margin: 0.5rem;
