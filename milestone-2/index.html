@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Boolzapp - M1</title>
+        <title>Boolzapp - M2</title>
         <link rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
             integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="crossorigin="anonymous"
@@ -81,8 +81,8 @@
                         <div id="chat_search">
                             <div id="chat_search_wrapper">
                                 <i class="fas fa-search fa-lg fa-fw"></i>
-                                <input type="text" placeholder="Cerca o inizia
-                                    una nuova chat">
+                                <input type="text"
+                                    placeholder="Cerca o inizia una nuova chat">
                             </div>
                         </div>
 
@@ -92,7 +92,7 @@
 
                                 <div id="contact" v-for="(contact, index) in
                                     contacts" :class="index === counter ?
-                                    'active' : ''">
+                                    'active' : ''" @click="openChat">
 
                                     <img :src="contact.avatar" alt="">
 

@@ -81,6 +81,7 @@ body {
     width: 100%;
     height: calc(100% - 80px);
     background-image: url("../img/mine.jpg");
+    overflow-y: auto;
 }
 
 #messages_input {
