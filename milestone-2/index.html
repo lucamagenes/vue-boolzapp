@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Boolzapp - M1</title>
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+            integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="crossorigin="anonymous"
+            referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="./assets/css/style.css">
+    </head>
+    <body>
+
+        <div id="root">
+
+            <header id="background_header">
+
+                <div id="app_header">
+
+                    <aside id="left_header">
+
+                        <div id="user_avatar" class="avatar">
+                            <img :src="user[counter].avatar" alt="">
+                            <p class="user_name"> {{user[counter].name}} </p>
+                        </div>
+
+                        <div id="left_header_icons">
+                            <i class="fas fa-circle-notch fa-lg fa-fw"></i>
+                            <i class="fas fa-comment-alt fa-lg fa-fw"></i>
+                            <i class="fas fa-ellipsis-v fa-lg fa-fw"></i>
+                        </div>
+
+                    </aside>
+                    <!-- left side header -->
+
+                    <div id="right_header">
+
+                        <div id="open_chat">
+
+                            <img :src="contacts[counter].avatar" alt="">
+                            <div id="chat_info">
+                                <p>{{contacts[counter].name}} </p>
+                                <p class="last_access">Ultimo accesso oggi alle</p>
+                            </div>
+
+                        </div>
+
+                        <div id="chat_buttons">
+                            <i class="fas fa-search fa-lg fa-fw"></i>
+                            <i class="fas fa-paperclip fa-lg fa-fw"></i>
+                            <i class="fas fa-ellipsis-v fa-lg fa-fw"></i>
+                        </div>
+
+                    </div>
+                    <!-- right side header -->
+
+                </div>
+                <!-- app header -->
+
+            </header>
+            <!-- background header -->
+
+            <main id="background_main">
+
+                <div id="app_main">
+
+                    <aside id="left_main">
+
+                        <div id="notice">
+                            <button id="notification_btn">
+                                <i class="fas fa-bell-slash fa-lg fa-fw"></i>
+                            </button>
+                            <div id="notice_info">
+                                <p>Ricevi notifiche di nuovi messaggi</p>
+                                <a href="#">Attiva le notifiche desktop</a>
+                            </div>
+                        </div>
+
+                        <div id="chat_search">
+                            <div id="chat_search_wrapper">
+                                <i class="fas fa-search fa-lg fa-fw"></i>
+                                <input type="text" placeholder="Cerca o inizia
+                                    una nuova chat">
+                            </div>
+                        </div>
+
+                        <div id="chat_section">
+
+                            <div id="contacts">
+
+                                <div id="contact" v-for="(contact, index) in
+                                    contacts" :class="index === counter ?
+                                    'active' : ''">
+
+                                    <img :src="contact.avatar" alt="">
+
+                                    <p id="contact_name">{{contact.name}} </p>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </aside>
+                    <!-- left side main -->
+
+                    <div id="right_main">
+
+                        <div id="messages_box">
+
+                            <div id="messages">
+
+                                <div id="message" v-for="message in
+                                    contacts[counter].messages"
+                                    :class="message.status == 'sent' ?
+                                    'sent_message' : 'received_message'">
+
+                                    <p>{{message.text}}
+                                    </p>
+                                    <p class="date_message">{{message.date}}
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+                        <!-- messages box -->
+
+                        <div id="messages_input">
+
+                            <button class="emoj">
+                                <i class="far fa-smile fa-lg fa-fw"></i>
+                            </button>
+
+                            <input class="textMessage" type="text"
+                                placeholder="Scrivi un messaggio">
+
+                            <button class="voiceMessage">
+                                <i class="fas fa-microphone fa-lg fa-fw"></i>
+                            </button>
+
+                        </div>
+                        <!-- messages input -->
+
+                    </div>
+                    <!-- right side main -->
+
+                </div>
+                <!-- app main -->
+
+            </main>
+            <!-- background main -->
+
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+        <script src="./assets/js/app.js"></script>
+    </body>
+</html>
