@@ -108,7 +108,7 @@ const root = new Vue({
 
             }
 
-            this.replyMessage();
+            root.replyMessage();
 
             this.myMessages = {
                 date: new Date().toLocaleString(),
@@ -119,9 +119,7 @@ const root = new Vue({
         replyMessage() {
             setTimeout(function () {
 
-                if (this.contacts[this.counter].messages.includes(this.myMessages)) {
-                    this.contacts[this.counter].messages.push(this.autoReply)
-                }
+                root.contacts[root.counter].messages.push(root.autoReply)
 
             }, 1000);
         },
