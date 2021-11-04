@@ -87,10 +87,25 @@ const root = new Vue({
                 ],
             },
         ],
+        myMessages: {
+            date: new Date().toLocaleString(),
+            text: '',
+            status: 'sent',
+        },
     },
     methods: {
         openChat(index) {
             this.counter = index;
+        },
+        sendMessage() {
+            if (this.myMessages.text != '') {
+                this.contacts[this.counter].messages.push(this.myMessages)
+            }
+            this.myMessages = {
+                date: new Date().toLocaleString(),
+                text: '',
+                status: 'sent',
+            }
         }
     }
 })
