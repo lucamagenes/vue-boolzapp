@@ -111,7 +111,7 @@ body {
     align-items: center;
 }
 
-#left_header_icons i {
+#left_header_icons i, #chat_buttons i {
     margin: 0 0.5rem;
     color: #8f8383;
 }
