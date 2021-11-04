@@ -2,16 +2,10 @@ const root = new Vue({
     el: '#root',
     data: {
         counter: 0,
-        user: [
-            {
-                name: 'Nome Utente',
-                avatar: 'assets/img/avatar_4.jpg',
-            },
-        ],
         contacts: [
             {
                 name: 'Michele',
-                avatar: 'assets/img/avatar_1.jpg',
+                avatar: '_1',
                 visibile: true,
                 messages: [
                     {
@@ -33,7 +27,7 @@ const root = new Vue({
             },
             {
                 name: 'Fabio',
-                avatar: 'assets/img/avatar_2.jpg',
+                avatar: '_2',
                 visible: true,
                 messages: [
                     {
@@ -55,7 +49,7 @@ const root = new Vue({
             },
             {
                 name: 'Samuele',
-                avatar: 'assets/img/avatar_3.jpg',
+                avatar: '_3',
                 visible: true,
                 messages: [
                     {
@@ -77,7 +71,7 @@ const root = new Vue({
             },
             {
                 name: 'Luisa',
-                avatar: 'assets/img/avatar_6.jpg',
+                avatar: '_6',
                 visible: true,
                 messages: [
                     {
@@ -95,9 +89,8 @@ const root = new Vue({
         ],
     },
     methods: {
-        openChat() {
-            this.counter++
-
+        openChat(index) {
+            this.counter = index;
         }
     }
 })

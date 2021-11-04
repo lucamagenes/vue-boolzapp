@@ -22,8 +22,8 @@
                     <aside id="left_header">
 
                         <div id="user_avatar" class="avatar">
-                            <img :src="user[counter].avatar" alt="">
-                            <p class="user_name"> {{user[counter].name}} </p>
+                            <img src="./assets/img/avatar_4.jpg" alt="">
+                            <p class="user_name">Nome Utente</p>
                         </div>
 
                         <div id="left_header_icons">
@@ -39,7 +39,8 @@
 
                         <div id="open_chat">
 
-                            <img :src="contacts[counter].avatar" alt="">
+                            <img :src="'./assets/img/avatar' +
+                                contacts[counter].avatar + '.jpg'" alt="">
                             <div id="chat_info">
                                 <p>{{contacts[counter].name}} </p>
                                 <p class="last_access">Ultimo accesso oggi alle</p>
@@ -92,11 +93,11 @@
 
                                 <div id="contact" v-for="(contact, index) in
                                     contacts" :class="index === counter ?
-                                    'active' : ''" @click="openChat">
-
-                                    <img :src="contact.avatar" alt="">
-
-                                    <p id="contact_name">{{contact.name}} </p>
+                                    'active' : ''" @click="openChat(index)">
+                                    <img :src="'./assets/img/avatar' +
+                                        contact.avatar + '.jpg'" alt="">
+                                    <p id="contact_name">{{contact.name}}
+                                    </p>
                                 </div>
 
                             </div>
@@ -114,7 +115,7 @@
 
                                 <div id="message" v-for="message in
                                     contacts[counter].messages"
-                                    :class="message.status == 'sent' ?
+                                    :class="message.status === 'sent' ?
                                     'sent_message' : 'received_message'">
 
                                     <p>{{message.text}}
