@@ -92,6 +92,11 @@ const root = new Vue({
             text: '',
             status: 'sent',
         },
+        autoReply: {
+            date: new Date().toLocaleString(),
+            text: 'Ok',
+            status: 'received',
+        }
     },
     methods: {
         openChat(index) {
@@ -100,12 +105,25 @@ const root = new Vue({
         sendMessage() {
             if (this.myMessages.text != '') {
                 this.contacts[this.counter].messages.push(this.myMessages)
+
             }
+
+            this.replyMessage();
+
             this.myMessages = {
                 date: new Date().toLocaleString(),
                 text: '',
                 status: 'sent',
             }
-        }
-    }
+        },
+        replyMessage() {
+            setTimeout(function () {
+
+                if (this.contacts[this.counter].messages.includes(this.myMessages)) {
+                    this.contacts[this.counter].messages.push(this.autoReply)
+                }
+
+            }, 1000);
+        },
+    },
 })
