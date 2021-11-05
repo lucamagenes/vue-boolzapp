@@ -116,13 +116,23 @@
 
                             <div id="messages">
 
-                                <div id="message" v-for="message in
+                                <div id="message" v-for="(message, index) in
                                     contacts[counter].messages"
                                     :class="message.status === 'sent' ?
                                     'sent_message' : 'received_message'">
 
-                                    <p>{{message.text}}
-                                    </p>
+                                    <p>{{message.text}}</p>
+                                    <button>
+                                        <i id="info_message" class="fas
+                                            fa-chevron-down">
+                                            <div class="infos">
+                                                <p>Message info</p>
+                                                <p @click="deleteMsg(index,
+                                                    contacts[counter].messages[index])">Delete
+                                                    message</p>
+                                            </div>
+                                        </i>
+                                    </button>
                                     <p class="date_message">{{message.date}}
                                     </p>
 

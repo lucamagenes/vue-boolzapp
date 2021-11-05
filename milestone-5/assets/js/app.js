@@ -98,6 +98,7 @@ const root = new Vue({
             status: 'received',
         },
         chatSearch: '',
+        deletedMessages: [],
     },
     methods: {
         openChat(index) {
@@ -142,6 +143,10 @@ const root = new Vue({
             });
 
 
+        },
+        deleteMsg(i, message) {
+            this.contacts[this.counter].messages.splice(i, 1);
+            this.deletedMessages.push(message);
         }
     },
 
