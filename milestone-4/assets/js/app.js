@@ -128,32 +128,19 @@ const root = new Vue({
 
         },
         chatSearcher() {
-            //nella funzione verifico se i caratteri digitati sono presenti tra i nomi dei contatti
-            /* for (let i = 0; i < this.contacts.length; i++) {
 
-                console.log(this.contacts[i].name);
-                if (this.contacts[i].name.includes(root.chatSearch)) {
-                    this.contacts[i].visible = true;
-                } else {
-                    this.contacts[i].visible = false;
-                }
-            } */
-
+            //quindi cicli tra i contatti per fare la verifica.
             this.contacts.forEach(contact => {
-                console.log(contact.name);
                 contact.visible = false;
-                console.log(contact.visible);
 
+                //nella funzione verifico se i caratteri digitati sono presenti tra i nomi dei contatti
                 if (contact.name.toLowerCase().includes(root.chatSearch.toLowerCase())) {
+
+                    //se trovo un riscontro, cambio il valore della proprietá visible to true
                     contact.visible = true;
-                    console.log(contact.visible);
                 }
             });
 
-
-
-            //quindi cicli tra i contatti per fare la verifica.
-            //se trovo un riscontro, cambio il valore della proprietá visible to true
 
         }
     },

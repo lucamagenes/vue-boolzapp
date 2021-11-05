@@ -93,7 +93,8 @@
 
                             <div id="contacts">
 
-                                <div id="contact" v-for="(contact, index) in
+                                <div id="contact" v-if="contact.visible"
+                                    v-for="(contact, index) in
                                     contacts" :class="index === counter ?
                                     'active' : ''" @click="openChat(index)">
                                     <img :src="'./assets/img/avatar' +
