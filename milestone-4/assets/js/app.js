@@ -6,7 +6,7 @@ const root = new Vue({
             {
                 name: 'Michele',
                 avatar: '_1',
-                visibile: true,
+                visible: true,
                 messages: [
                     {
                         date: '10/01/2020 15:30:55',
@@ -96,7 +96,8 @@ const root = new Vue({
             date: new Date().toLocaleString(),
             text: 'Ok',
             status: 'received',
-        }
+        },
+        chatSearch: '',
     },
     methods: {
         openChat(index) {
@@ -110,11 +111,13 @@ const root = new Vue({
 
             root.replyMessage();
 
+
             this.myMessages = {
                 date: new Date().toLocaleString(),
                 text: '',
                 status: 'sent',
             }
+
         },
         replyMessage() {
             setTimeout(function () {
@@ -122,6 +125,20 @@ const root = new Vue({
                 root.contacts[root.counter].messages.push(root.autoReply)
 
             }, 1000);
+
         },
+        chatSearcher() {
+            //nella funzione verifico se i caratteri digitati sono presenti tra i nomi dei contatti
+            if (this.contacts.name.includes(this.chatSearch)) {
+                this.contacts.visible = true;
+            } else {
+                this.contacts.visible = false;
+            }
+
+            //quindi cicli tra i contatti per fare la verifica.
+            //se trovo un riscontro, cambio il valore della proprietá visible to true
+
+        }
     },
+
 })

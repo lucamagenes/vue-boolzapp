@@ -83,7 +83,9 @@
                             <div id="chat_search_wrapper">
                                 <i class="fas fa-search fa-lg fa-fw"></i>
                                 <input type="text"
-                                    placeholder="Cerca o inizia una nuova chat">
+                                    placeholder="Cerca o inizia una nuova chat"
+                                    v-model="chatSearch"
+                                    @keyup="chatSearcher">
                             </div>
                         </div>
 
