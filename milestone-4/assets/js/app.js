@@ -129,11 +129,18 @@ const root = new Vue({
         },
         chatSearcher() {
             //nella funzione verifico se i caratteri digitati sono presenti tra i nomi dei contatti
-            if (this.contacts.name.includes(this.chatSearch)) {
-                this.contacts.visible = true;
-            } else {
-                this.contacts.visible = false;
+            for (let i = 0; i < this.contacts.length; i++) {
+
+                console.log(this.contacts[i].name);
+                if (this.contacts[i].name.includes(root.chatSearch)) {
+                    this.contacts[i].visible = true;
+                } else {
+                    this.contacts[i].visible = false;
+                }
             }
+
+
+
 
             //quindi cicli tra i contatti per fare la verifica.
             //se trovo un riscontro, cambio il valore della proprietá visible to true
