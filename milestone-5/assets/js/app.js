@@ -88,12 +88,12 @@ const root = new Vue({
             },
         ],
         myMessages: {
-            date: new Date().toLocaleString(),
+            date: moment().format('l h:mm:ss'),
             text: '',
             status: 'sent',
         },
         autoReply: {
-            date: new Date().toLocaleString(),
+            date: moment().format('l h:mm:ss'),
             text: 'Ok',
             status: 'received',
         },
@@ -108,13 +108,17 @@ const root = new Vue({
             if (this.myMessages.text != '') {
                 this.contacts[this.counter].messages.push(this.myMessages)
 
+                root.replyMessage();
             }
-            root.replyMessage();
 
-
+            this.autoReply = {
+                date: moment().format('l h:mm:ss'),
+                text: 'Ok',
+                status: 'received',
+            }
 
             this.myMessages = {
-                date: new Date().toLocaleString(),
+                date: moment().format('l h:mm:ss'),
                 text: '',
                 status: 'sent',
             }
